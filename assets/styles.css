@@ -1,0 +1,66 @@
+/* assets/styles.css - shared site styles (based on RiverBite theme) */
+:root{
+  --bg:#0f1724; --card:#0b1220; --muted:#9AA4B2; --accent:#E84A5F; --accent-2:#FFB86B;
+  --radius:12px; --gap:1rem; --max-width:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  background:#0f1724;color:#EAF0F6;padding:1rem;display:flex;justify-content:center;
+}
+.site{width:100%;max-width:1100px;margin:0 auto}
+a{color:inherit}
+.skip-link{position:absolute;left:-999px}
+.skip-link:focus{position:fixed;left:1rem;top:1rem;background:rgba(255,255,255,0.06);padding:.5rem .75rem;border-radius:6px;z-index:999}
+
+/* Header / Nav */
+header{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:.5rem 0}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
+.logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:700;color:#fff}
+.brand-title{font-weight:700}
+nav{position:relative}
+.nav-toggle{background:transparent;border:none;color:var(--muted);font-weight:700;padding:.4rem;display:flex;align-items:center;gap:.5rem}
+.nav-list{display:none;position:absolute;right:0;top:calc(100% + 8px);background:rgba(11,18,32,0.98);border-radius:10px;padding:.75rem;box-shadow:0 12px 30px rgba(2,6,23,0.6);min-width:180px}
+.nav-list a{display:block;color:var(--muted);padding:.45rem .6rem;border-radius:8px;text-decoration:none}
+.nav-list a:hover,.nav-list a.active{color:#fff;background:rgba(255,255,255,0.03)}
+
+/* Hero and layout */
+.hero{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center;margin:.75rem 0;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:12px}
+.hero-inner{display:grid;gap:.75rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:1.4rem;margin:0}
+.hero p{margin:0;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none;padding:.6rem .9rem;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(232,74,95,0.12)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+
+/* Grid and cards */
+.grid-2{display:grid;grid-template-columns:1fr;gap:1rem}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.menu-card{background:rgba(255,255,255,0.02);padding:.75rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.gallery img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+
+/* Contact form */
+form{background:rgba(255,255,255,0.02);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.form-row{display:grid;grid-template-columns:110px 1fr;gap:.5rem;align-items:start;margin-bottom:.8rem}
+.form-row label{font-weight:600;color:var(--muted);padding-top:.35rem}
+input,textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+textarea{min-height:120px;resize:vertical}
+
+/* Footer */
+footer{margin-top:1.5rem;padding:1rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;align-items:center}
+footer a{text-decoration:none;color:var(--muted)}
+
+/* Reveal/animations */
+.reveal{opacity:0;transform:translateY(10px) scale(.995);transition:opacity .48s cubic-bezier(.2,.9,.2,1),transform .48s cubic-bezier(.2,.9,.2,1)}
+.reveal.reveal--visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){ .reveal, .reveal.reveal--visible { transition:none !important; transform:none !important; opacity:1 !important } }
+
+/* Responsive */
+@media(min-width:780px){
+  .hero{grid-template-columns:1fr 360px}
+  .grid-2{grid-template-columns:1fr 420px}
+  .menu-grid{grid-template-columns:repeat(3,1fr)}
+  .gallery img{height:130px}
+}
