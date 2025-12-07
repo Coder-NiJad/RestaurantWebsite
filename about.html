@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — RiverBite</title>
+  <link rel="stylesheet" href="assets/about.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="header-content">
+      <a class="brand" href="index.html">
+        <div class="logo">RB</div>
+        <div class="brand-title">RiverBite</div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>About RiverBite</h1>
+        <p>Family-owned, locally sourced, we focus on seasonal dishes and fast friendly service. A neighborhood spot where comfort meets craftsmanship.</p>
+        <div class="founded-badge">
+          <strong>Founded</strong>
+          <span class="year">2018</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="container">
+        <h2>Our Story</h2>
+        <div class="story-content">
+          <p>RiverBite started when two friends wanted a neighborhood spot with honest food and good coffee. What began as a small café has grown into a beloved community gathering place. We believe in keeping things simple, fresh, and made with care.</p>
+          <br>
+          <p>Every dish tells a story—from the local farmers who grow our ingredients to the chefs who craft them with passion. We're more than just a restaurant; we're a place where neighbors become friends and every meal feels like home.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-icon">🌱</span>
+            <div class="value-title">Local & Fresh</div>
+            <div class="value-desc">Sourcing ingredients from nearby farms and producers</div>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">♻️</span>
+            <div class="value-title">Sustainable</div>
+            <div class="value-desc">Minimal waste, maximum flavor in every dish</div>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🤝</span>
+            <div class="value-title">Community First</div>
+            <div class="value-desc">Building connections, one meal at a time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-name">Chef Aarav</div>
+            <div class="team-role">Head Chef</div>
+            <div class="team-specialty">Seasonal Small Plates</div>
+            <p class="team-bio">Over 10 years of experience in contemporary Indian & fusion cuisine. Aarav brings creativity and passion to every dish, focusing on bold flavors and beautiful presentation.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-name">Priya Sharma</div>
+            <div class="team-role">Manager</div>
+            <div class="team-specialty">Operations & Events</div>
+            <p class="team-bio">Front of house and events coordinator. Priya ensures every guest feels welcome and every experience is memorable, from casual dinners to special celebrations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container">
+        <h2>Our Mission</h2>
+        <div class="mission-box">
+          <p>RiverBite sources local produce, supports small farmers, and focuses on minimal waste. We aim to create a community dining experience where comfort meets craftsmanship. Every ingredient is chosen with care, every dish prepared with pride, and every guest treated like family.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="container">
+        <h2>Recognition</h2>
+        <ul class="awards-list">
+          <li>
+            <span class="award-text">Best Local Eatery — YourTown Food Awards 2023</span>
+          </li>
+          <li>
+            <span class="award-text">Top 10 Local Catering Services — LocalBiz 2024</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="social-section">
+          <h2>Find Us Online</h2>
+          <p style="color: var(--text-muted); font-size: 18px;">Join our community and stay updated with the latest specials, events, and behind-the-scenes moments</p>
+          <div class="social-links">
+            <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer" class="social-link">
+              📸 Instagram
+            </a>
+            <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" class="social-link">
+              👍 Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>&copy; <span id="year">2025</span> RiverBite. Made with ❤️</div>
+      <div>
+        <a href="privacy.html">Privacy</a> · 
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('nav');
+    
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

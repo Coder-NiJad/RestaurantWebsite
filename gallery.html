@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — RiverBite</title>
+  <link rel="stylesheet" href="assets/gallery.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="header-content">
+      <a class="brand" href="index.html">
+        <div class="logo">RB</div>
+        <div class="brand-title">RiverBite</div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>Interior, dishes and behind-the-scenes moments that make RiverBite special</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="food">Food</button>
+          <button class="filter-tab" data-filter="interior">Interior</button>
+          <button class="filter-tab" data-filter="bts">Behind the Scenes</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery">
+          <div class="gallery-item" data-category="food" data-index="0">
+            <img src="assets/dish-1.png" alt="Grilled Paneer Dish" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">Grilled Paneer Tikka</div>
+              <div class="gallery-desc">Char-grilled with seasonal marinade</div>
+            </div>
+          </div>
+
+          <div class="gallery-item wide" data-category="interior" data-index="1">
+            <img src="assets/interiors-2.png" alt="Restaurant Interior" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">Cozy Dining Space</div>
+              <div class="gallery-desc">Warm ambiance for every occasion</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="food" data-index="2">
+            <img src="assets/dish-2.png" alt="Signature Dish" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">Signature Creation</div>
+              <div class="gallery-desc">Fresh ingredients, bold flavors</div>
+            </div>
+          </div>
+
+          <div class="gallery-item tall" data-category="food" data-index="3">
+            <img src="assets/food-3.jpg" alt="Seasonal Special" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">Seasonal Special</div>
+              <div class="gallery-desc">Limited time delicacy</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior" data-index="4">
+            <img src="assets/interiors.jpg" alt="Dining Area" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">Main Dining Area</div>
+              <div class="gallery-desc">Perfect for family gatherings</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="food" data-index="5">
+            <img src="assets/food-4.jpg" alt="Fresh Plating" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">Artful Presentation</div>
+              <div class="gallery-desc">Every plate tells a story</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="closeLightbox">✕</button>
+      <button class="lightbox-nav prev" id="prevImage">‹</button>
+      <button class="lightbox-nav next" id="nextImage">›</button>
+      <img id="lightboxImage" src="" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div>&copy; <span id="year">2025</span> RiverBite. Made with ❤️</div>
+      <div>
+        <a href="privacy.html">Privacy</a> · 
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('nav');
+    
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Filter functionality
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active tab
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+
+        // Filter items
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const prevImage = document.getElementById('prevImage');
+    const nextImage = document.getElementById('nextImage');
+    let currentIndex = 0;
+
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentIndex = parseInt(item.dataset.index);
+        openLightbox();
+      });
+    });
+
+    function openLightbox() {
+      const item = document.querySelector(`[data-index="${currentIndex}"]`);
+      const img = item.querySelector('img');
+      const caption = item.querySelector('.gallery-caption');
+      
+      lightboxImage.src = img.src;
+      lightboxCaption.textContent = caption ? caption.textContent : '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxFunc() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeLightbox.addEventListener('click', closeLightboxFunc);
+    
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightboxFunc();
+      }
+    });
+
+    prevImage.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      openLightbox();
+    });
+
+    nextImage.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      openLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightboxFunc();
+        if (e.key === 'ArrowLeft') prevImage.click();
+        if (e.key === 'ArrowRight') nextImage.click();
+      }
+    });
+  </script>
+</body>
+</html>

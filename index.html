@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RiverBite — Fresh Flavors, Friendly Faces</title>
+  <link rel="stylesheet" href="assets/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="header-content">
+      <a class="brand" href="index.html">
+        <div class="logo">RB</div>
+        <div class="brand-title">RiverBite</div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>Fresh flavors.<br>Friendly faces.</h1>
+        <p>RiverBite is a neighborhood restaurant offering seasonal dishes, quick delivery and cozy dine-in.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="menu.html">See Menu</a>
+          <a class="btn btn-ghost" href="contact.html">Reserve Table</a>
+        </div>
+        <div class="status-card">
+          <div class="status-item open">
+            <strong>Open Now</strong>
+            <div style="color: var(--text-muted); font-size: 14px;">Closes 22:00</div>
+          </div>
+          <div class="status-item rating">
+            <strong>4.6★</strong>
+            <div style="color: var(--text-muted); font-size: 14px;">120 reviews</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Popular this week</h2>
+          <p>Handpicked favorites loved by our community</p>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <h3>Grilled Paneer</h3>
+            <div class="price">$8.50</div>
+            <div class="meta">🌱 Veg · Fresh & Flavorful</div>
+          </div>
+          <div class="menu-card">
+            <h3>Signature Burger</h3>
+            <div class="price">$9.25</div>
+            <div class="meta">🌶️ Spicy · Chef's Special</div>
+          </div>
+          <div class="menu-card">
+            <h3>Smokey Chicken</h3>
+            <div class="price">$10.00</div>
+            <div class="meta">✨ Gluten-free · Premium Cut</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>A taste of what's cooking</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/dish-1.png" alt="Grilled Paneer Dish" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/food-2.jpg" alt="Signature Burger" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/interiors.jpg" alt="Cozy Restaurant Interior" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hours">
+      <div class="container">
+        <div class="section-header">
+          <h2>Opening Hours</h2>
+          <p>We're here when you need us</p>
+        </div>
+        <div class="hours-grid">
+          <div class="hours-item">
+            <strong>Mon – Fri</strong>
+            <div style="color: var(--text-muted);">10:00 — 22:00</div>
+          </div>
+          <div class="hours-item">
+            <strong>Saturday</strong>
+            <div style="color: var(--text-muted);">09:00 — 23:00</div>
+          </div>
+          <div class="hours-item">
+            <strong>Sunday</strong>
+            <div style="color: var(--text-muted);">09:00 — 21:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>What people say</h2>
+          <p>Real reviews from real neighbors</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <span class="testimonial-author">Priya R.</span>
+            <p class="testimonial-text">Amazing flavors — best paneer in town. The staff is incredibly friendly and the atmosphere is perfect for a cozy dinner.</p>
+          </div>
+          <div class="testimonial">
+            <span class="testimonial-author">Adam K.</span>
+            <p class="testimonial-text">Fast delivery and generous portions. Highly recommend for events. Their seasonal specials never disappoint!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+        <div class="newsletter-box">
+          <h2>Join our newsletter</h2>
+          <p>Get weekly specials and 10% off your first order</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="you@email.com" required>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>&copy; <span id="year">2025</span> RiverBite. Made with ❤️</div>
+      <div>
+        <a href="privacy.html">Privacy</a> · 
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('nav');
+    
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
